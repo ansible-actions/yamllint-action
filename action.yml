@@ -1,0 +1,19 @@
+---
+name: Yamllint Action
+description: Action to run Yamllint.
+author: L3D <l3d@c3woc.de>
+
+inputs:
+  target:
+    description: |
+      Target for yamllint
+      For example './' or 'path/to/yamlfiles/'
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    TARGET: ${{ inputs.target }}
+branding:
+  icon: 'check-circle'
+  color: 'blue'
